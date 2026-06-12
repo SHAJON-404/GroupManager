@@ -1,4 +1,4 @@
-# Telegram URL Remover Bot (Group Helper)
+# Telegram Group Manager Bot
 
 A modern, highly-modular Telegram Bot built in Python that keeps your group chats clean and secure. It automatically removes messages containing links/URLs, implements a persistent warning counter with auto-banning, provides interactive inline unban keyboards for administrators, announces user name/username profile changes in real-time, removes default user join/leave system alerts, and greets new members. 
 
@@ -31,7 +31,7 @@ For maximum chat cleanliness, all temporary bot alerts automatically disappear a
 ## 📁 File Structure
 
 ```text
-GroupHelper/
+GroupManager/
 ├── utils/
 │   ├── __init__.py
 │   ├── __handlers.py            # Directs and maps bot event listeners
@@ -39,11 +39,11 @@ GroupHelper/
 │   ├── __warnings_then_ban.py   # Warning database tracker, banning, and inline unban keyboard
 │   ├── __profile_tracker.py     # Username/Name change comparison logic
 │   ├── __url_validator.py       # Message entities and protocol-less URL regex validator
-│   ├── __join_left.py           # Handles join/left notification deletion + greets new members
+│   ├── __join_left.py           # Handles deletion of join/left alerts + welcomes users
 │   └── storage.py               # Safe JSON persistent database helpers
 ├── .dockerignore                # Specifies files ignored in Docker builds
 ├── .gitignore                   # Prevents tracking virtual env, configs, and json databases in Git
-├── .env                         # Environment credentials and configurations
+├── .env                         # Configuration & credentials
 ├── docker-compose.yml           # Docker Compose services configuration
 ├── Dockerfile                   # Docker image blueprint instructions
 ├── main.py                      # Pure bot bootstrapper and polling runner (minimal script)
@@ -66,7 +66,7 @@ GroupHelper/
 
 1. Clone or navigate to the project directory:
    ```bash
-   cd GroupHelper
+   cd GroupManager
    ```
 2. Install Python packages:
    ```bash
