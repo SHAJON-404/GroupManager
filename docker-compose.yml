@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: telegram_group_helper
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Mount JSON database files for persistent tracking across container restarts
+      - ./warnings.json:/app/warnings.json
+      - ./user_profiles.json:/app/user_profiles.json
